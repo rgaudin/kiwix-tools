@@ -254,7 +254,8 @@ int main(int argc, char** argv)
   server.setPort(serverPort);
   server.setNbThreads(nb_threads);
   server.setVerbose(isVerboseFlag);
-  server.setTaskbar(!noSearchBarFlag, !noLibraryButtonFlag, blockExternalLinks);
+  server.setTaskbar(!noSearchBarFlag, !noLibraryButtonFlag);
+  server.setBlockExternalLinks(blockExternalLinks);
 
   if (! server.start()) {
     cerr << "Unable to instantiate the HTTP daemon. The port " << serverPort
